@@ -2,7 +2,8 @@
 (provide (all-defined-out))
 
 
-(define (image )
-  (list )
-  )
+(define (image width height . pixel )
+  (list width height pixel))
+
+  
 
