@@ -1,35 +1,25 @@
 #lang racket
 ;----- Constructor -----.
-(define (pixrgb-d x y r g b d)
+(define (pixhex-d x y hex d)
   (list x y r g b d))
 
 ;----- Selectores (GET)-----.
-;Selector del element x, cordenada x del pixrgb.
+;Selector del element x, cordenada x del pixhex.
 ;Dom: Lista
 ;Rec: numero (int)
 ;(define (get-x lista) (car lista))
 
-;Selector del element y, cordenada y del pixrgb.
+;Selector del element y, cordenada y del pixhex.
 ;Dom: Lista
 ;Rec: numero (int)
 ;(define (get-y lista) (cadr lista))
 
-;Selector del element r, numero del 0 al 255 del pixrgb.
+;Selector del element hex, numera hexadecimal en formato string del pixhex.
 ;Dom: Lista
 ;Rec: numero (int)
-(define (get-r lista) (caddr lista))
+(define (get-hex lista) (caddr lista))
 
-;Selector del element g, numero del 0 al 255 del pixrgb.
-;Dom: Lista
-;Rec: numero (int)
-(define (get-g lista) (cadddr lista))
-
-;Selector del element b, numero del 0 al 255 del pixrgb.
-;Dom: Lista
-;Rec: numero (int)
-(define (get-b lista) (cadddr lista))
-
-;Selector del element d, deph (profundidad) del pixrgb.
+;Selector del element d, deph (profundidad) del pixhex.
 ;Dom: Lista
 ;Rec: numero (int)
 ;(define (get-d lista) (cadddr lista))
