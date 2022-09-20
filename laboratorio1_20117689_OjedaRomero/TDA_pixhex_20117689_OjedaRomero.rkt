@@ -1,7 +1,9 @@
 #lang racket
+(require "TDA_pixbit_20117689_OjedaRomero.rkt")
+(provide (all-defined-out))
 ;----- Constructor -----.
 (define (pixhex-d x y hex d)
-  (list x y r g b d))
+  (list x y hex d))
 
 ;----- Selectores (GET)-----.
 ;Selector del element x, cordenada x del pixhex.
@@ -22,7 +24,7 @@
 ;Selector del element d, deph (profundidad) del pixhex.
 ;Dom: Lista
 ;Rec: numero (int)
-;(define (get-d lista) (cadddr lista))
+;(define (get-d lista) (last lista))
 
 
 ;----- Modificadores (SET) -----.

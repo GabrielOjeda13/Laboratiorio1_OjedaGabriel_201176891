@@ -1,4 +1,5 @@
 #lang racket
+(provide (all-defined-out))
 ;---------- TDA PIXBIT-D ----------.
 
 ;----- Constructor -----.
@@ -24,7 +25,7 @@
 ;Selector del element d, deph (profundidad) del pixbit.
 ;Dom: Lista
 ;Rec: numero (int)
-(define (get-d lista) (cadddr lista))
+(define (get-d lista) (last lista))
 
 
 ;----- Modificadores (SET) -----.

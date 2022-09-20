@@ -26,7 +26,6 @@
 (define (get-pixels lista) (caddr lista))
 
 
-
 ;----- Modificadores (SET) -----.
 ;Modificador del element width, ancho de la imagen.
 ;Dom: Lista x lista
