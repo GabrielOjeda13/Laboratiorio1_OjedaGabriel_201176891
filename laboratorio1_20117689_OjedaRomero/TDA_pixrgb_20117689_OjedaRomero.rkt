@@ -1,21 +1,14 @@
 #lang racket
-(require "TDA_pixbit_20117689_OjedaRomero.rkt")
 (provide (all-defined-out))
+(require "FuncionesBase_20117689_OjedaRomero.rkt")
+
+;---------- TDA PIXRGB-D ----------.
+
 ;----- Constructor -----.
 (define (pixrgb-d x y r g b d)
   (list x y r g b d))
 
 ;----- Selectores (GET)-----.
-;Selector del element x, cordenada x del pixrgb.
-;Dom: Lista
-;Rec: numero (int)
-;(define (get-x lista) (car lista))
-
-;Selector del element y, cordenada y del pixrgb.
-;Dom: Lista
-;Rec: numero (int)
-;(define (get-y lista) (cadr lista))
-
 ;Selector del element r, numero del 0 al 255 del pixrgb.
 ;Dom: Lista
 ;Rec: numero (int)
@@ -30,12 +23,6 @@
 ;Dom: Lista
 ;Rec: numero (int)
 (define (get-b lista) (car(cdddr lista)))
-
-;Selector del element d, deph (profundidad) del pixrgb.
-;Dom: Lista
-;Rec: numero (int)
-;(define (getbit-d lista) (last lista))
-
 
 ;----- Modificadores (SET) -----.
 ;Modificador del element r, numero del 0 al 255 del pixrgb.
@@ -70,3 +57,4 @@
             (get-g mi-pixrgb)
             new-b
             (get-d mi-pixrgb)))
+

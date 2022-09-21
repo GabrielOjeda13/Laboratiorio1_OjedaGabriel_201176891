@@ -1,5 +1,7 @@
 #lang racket
 (provide (all-defined-out))
+(require "FuncionesBase_20117689_OjedaRomero.rkt")
+
 ;---------- TDA PIXBIT-D ----------.
 
 ;----- Constructor -----.
@@ -7,25 +9,10 @@
   (list x y bit d))
 
 ;----- Selectores (GET)-----.
-;Selector del element x, cordenada x del pixbit.
-;Dom: Lista
-;Rec: numero (int)
-(define (get-x lista) (car lista))
-
-;Selector del element y, cordenada y del pixbit.
-;Dom: Lista
-;Rec: numero (int)
-(define (get-y lista) (cadr lista))
-
 ;Selector del element bit, bit (color) del pixbit.
 ;Dom: Lista
 ;Rec: numero (int)
 (define (get-bit lista) (caddr lista))
-
-;Selector del element d, deph (profundidad) del pixbit.
-;Dom: Lista
-;Rec: numero (int)
-(define (get-d lista) (last lista))
 
 
 ;----- Modificadores (SET) -----.
@@ -46,3 +33,5 @@
             new-y
             (get-bit mi-pixbit)
             (get-d mi-pixbit)))
+
+
