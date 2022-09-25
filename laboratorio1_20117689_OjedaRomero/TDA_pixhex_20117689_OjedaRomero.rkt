@@ -18,3 +18,8 @@
 ;Modificador del element hex, numera hexadecimal en formato string del pixhex
 ;Dom: Lista x lista
 ;Rec: Lista
+(define (set-hex mi-pixhex new-hex)
+  (pixhex-d (get-x mi-pixhex)
+            (get-y mi-pixhex)
+            new-hex
+            (get-d mi-pixhex)))
