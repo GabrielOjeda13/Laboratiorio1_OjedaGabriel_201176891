@@ -34,7 +34,7 @@
 
 ;----- Modificadores (SET) -----.
 ;Modificador del element width, ancho de la imagen.
-;Dom: Lista x lista
+;Dom: Lista x Int
 ;Rec: Lista
 (define (set-width mi-image new-width)
   (image new-width
@@ -42,7 +42,7 @@
          (get-pixels mi-image)))
 
 ;Modificador del element height, largo de la imagen.
-;Dom: Lista x lista
+;Dom: Lista x Int
 ;Rec: Lista
 (define (set-height mi-image new-height)
   (image (get-width mi-image)
@@ -59,7 +59,7 @@
        #f)))
 
 ;Función que permite determinar si la imagen corresponde a un pixmap-d.
-;Utiliza la funcion pixrgb? del TDA pixbit para validar los pixeles de la imagen bitmap.
+;Utiliza la funcion pixrgb? del TDA pixrgb para validar los pixeles de la imagen pixmap.
 ;Dom: image
 ;Rec: boolean
 (define pixmap?(lambda(imagen)
@@ -68,7 +68,7 @@
        #f)))
 
 ;Función que permite determinar si la imagen corresponde a un hexmap-d.
-;Utiliza la funcion pixrgb? del TDA pixbit para validar los pixeles de la imagen bitmap.
+;Utiliza la funcion pixhex? del TDA pixhex para validar los pixeles de la imagen hexmap.
 ;Dom: image
 ;Rec: boolean
 (define hexmap?(lambda(imagen)
@@ -76,11 +76,30 @@
        #t
        #f)))
 
+;Función que permite invertir una imágen horizontalmente.
+;Primero se debe validar el tipo de imagen para utilizar el selector que corresponda a cada tipo de imagen.
+;Luego enlista los valores de la imagen y llama a la funcion flip-x que invierte los valores de la coordenada x de manera recursiva.
+;Dominio: image
+;Recorrido: image
+(define (flipH imagen)
+  (cond
+    [(pixmap? imagen) (list (get-width imagen) (get-height imagen) (flip-x (get-width imagen) (get-pixels imagen) set-xrgb))]
+    [(bitmap? imagen) (list (get-width imagen) (get-height imagen) (flip-x (get-width imagen) (get-pixels imagen) set-xbit))]
+    [(hexmap? imagen) (list (get-width imagen) (get-height imagen) (flip-x (get-width imagen) (get-pixels imagen) set-xhex))]
+    [else #f]))
 
 
-
-
-
+;Función que permite invertir una imágen Verticalmente.
+;Primero se debe validar el tipo de imagen para utilizar el selector que corresponda a cada tipo de imagen.
+;Luego enlista los valores de la imagen y llama a la funcion flip-y que invierte los valores de la coordenada y de manera recursiva.
+;Dominio: image
+;Recorrido: image
+(define (flipV imagen)
+  (cond
+    [(pixmap? imagen) (list (get-width imagen) (get-height imagen) (flip-y (get-width imagen) (get-pixels imagen) set-yrgb))]
+    [(bitmap? imagen) (list (get-width imagen) (get-height imagen) (flip-y (get-width imagen) (get-pixels imagen) set-ybit))]
+    [(hexmap? imagen) (list (get-width imagen) (get-height imagen) (flip-y (get-width imagen) (get-pixels imagen) set-yhex))]
+    [else #f]))
 
 
 
