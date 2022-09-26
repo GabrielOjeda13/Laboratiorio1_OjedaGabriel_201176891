@@ -67,13 +67,12 @@
 (define pixhex?(lambda(pixels)
     (cond
       [(empty? pixels)#f]
-      [(not(number?(car(car pixels))))#f]
-      [(not(number?(cadr(car pixels))))#f]
-      [(not(number?(cadr(car pixels))))#f]
-      [(not(equal?(length pixels)2))#f]
-      [(not(equal?(length(cadr pixels))2))#f]
-      [(not(equal?(string-length(car(cadr pixels)))6))#f]
-      [(not(string?(car(cadr pixels))))#f]
+      [(not(number?(car pixels)))#f]
+      [(not(number?(cadr pixels)))#f]
+      [(not(number?(cadddr pixels)))#f]
+      [(not(string?(cadr pixels)))#f]
+      [(not(equal?(length pixels)4))#f]
+      [(not(equal?(string-length(caddr pixels))6))#f]
       [else #t])))
 
 

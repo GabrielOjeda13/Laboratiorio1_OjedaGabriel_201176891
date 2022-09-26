@@ -106,14 +106,14 @@
 (define pixrgb?(lambda(pixels)
     (cond
       [(empty? pixels)#f]
-      [(not(equal?(length pixels)2))#f]
-      [(not(equal?(length(cadr pixels))))#f]
-      [(not(number?(car(car pixels))))#f]
-      [(not(number?(cadr(car pixels))))#f]
-      [(not(number?(fourth(cadr pixels))))#f]
-      [(not(or(<=(car(cadr pixels))255(>=(car(cadr pixels))0))))#f]
-      [(not(or(<=(cadr(cadr pixels))255(>=(cadr(cadr pixels))0))))#f]
-      [(not(or(<=(caddr(cadr pixels))255(>=(caddr(cadr pixels))0))))#f]
+      [(not(equal?(length pixels)6))#f]
+      [(not(number?(car pixels)))#f]
+      [(not(number?(cadr pixels)))#f]
+      [(not(number?(caddr pixels)))#f]
+      [(not(number?(cadddr pixels)))#f]
+      [(not(or(<=(caddr pixels))255(>=(caddr pixels))0))#f]
+      [(not(or(<=(cadddr pixels))255(>=(caddr pixels))0))#f]
+      [(not(or(<=(fifth pixels))255(>=(fifth pixels))0))#f]
       [else #t])))
 
 

@@ -8,7 +8,7 @@
 
 ; ------ FUNCION MAIN -------.
 
-;Bloque de modificadores (Funciones) que aplican para el TDA image y en consiguiente los TDAs de cada pixels.
+;--- Bloque de modificadores (Funciones) que aplican para el TDA image y en consiguiente los TDAs de cada pixels ---.
 
 ;Función que permite invertir una imágen horizontalmente.
 ;Primero se debe validar el tipo de imagen para utilizar el selector que corresponda a cada tipo de imagen.

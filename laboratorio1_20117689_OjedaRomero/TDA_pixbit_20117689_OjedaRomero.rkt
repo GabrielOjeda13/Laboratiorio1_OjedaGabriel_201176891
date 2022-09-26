@@ -65,12 +65,12 @@
 (define pixbit?(lambda(pixels)
     (cond
       [(empty? pixels)#f]
-      [(not(number?(car(car pixels))))#f]
-      [(not(number?(cadr(car pixels))))#f]
-      [(not(number?(cadr(cadr pixels))))#f]
-      [(not(or(equal?(car(cadr pixels))0 equal?(car(cadr pixels))1)))#f]
-      [(not(=(length pixels)2))#f]
-      [(not(=(length(cadr pixels))2))#f]
+      [(not(number?(car pixels)))#f]
+      [(not(number?(cadr pixels)))#f]
+      [(not(number?(caddr pixels)))#f]
+      [(not(or(equal?(car pixels)0) (equal?(car pixels)1)))#f]
+      [(not(or(equal?(cadr pixels)0) (equal?(cadr pixels)1)))#f]
+      [(not(=(length pixels)4))#f]
       [else #t])))
 
 
