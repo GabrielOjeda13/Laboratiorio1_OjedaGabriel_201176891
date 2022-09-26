@@ -55,6 +55,7 @@
             (get-bit mi-pixbit)
             new-d))
 
+;------ Pertenencia -----.
 ;Función de pertenencia que valida si un pixels es de tipo pixbit.
 ;Dom: Pixels
 ;Rec: Booleano

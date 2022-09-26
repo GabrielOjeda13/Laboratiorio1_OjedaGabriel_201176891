@@ -57,7 +57,7 @@
 
 
 
-
+;------ Pertenencia -----.
 ;Función de pertenencia que valida si un pixels es de tipo pixhex.
 ;Dom: Pixels
 ;Rec: Booleano
