@@ -19,14 +19,43 @@
 (define (get-hex lista) (caddr lista))
 
 ;----- Modificadores (SET) -----.
-;Modificador del element hex, numera hexadecimal en formato string del pixhex
-;Dom: Lista x lista
+;Modificador del element x, cordenada x del pixhex.
+;Dom: Lista x Int
 ;Rec: Lista
-(define (set-hex mi-pixhex new-hex)
+(define (set-xhex mi-pixhex new-x)
+  (pixhex-d new-x
+         (get-y mi-pixhex)
+         (get-hex mi-pixhex)
+         (get-d mi-pixhex)))
+
+;Modificador del element y, cordenada y del pixhex.
+;Dom: Lista x Int
+;Rec: Lista
+(define (set-yhex mi-pixhex new-y)
+  (pixhex-d (get-x mi-pixhex)
+            new-y
+            (get-hex mi-pixhex)
+            (get-d mi-pixhex)))
+
+;Modificador del element hex, numero hexadecimal en formato string del pixhex
+;Dom: Lista x String
+;Rec: Lista
+(define (set-hexhex mi-pixhex new-hex)
   (pixhex-d (get-x mi-pixhex)
             (get-y mi-pixhex)
             new-hex
             (get-d mi-pixhex)))
+
+;Modificador del element d, profundiad del pixhex.
+;Dom: Lista x Int
+;Rec: Lista
+(define (set-dhex mi-pixhex new-d)
+  (pixhex-d (get-x mi-pixhex)
+            (get-y mi-pixhex)
+            new-d
+            (get-d mi-pixhex)))
+
+
 
 
 ;Función de pertenencia que valida si un pixels es de tipo pixhex.
@@ -37,7 +66,7 @@
 ;y si no cabe en ninguna significa que cumple para ser pixhex.
 (define pixhex?(lambda(pixels)
     (cond
-      [(empty? pixel)#f]
+      [(empty? pixels)#f]
       [(not(number?(car(car pixels))))#f]
       [(not(number?(cadr(car pixels))))#f]
       [(not(number?(cadr(car pixels))))#f]

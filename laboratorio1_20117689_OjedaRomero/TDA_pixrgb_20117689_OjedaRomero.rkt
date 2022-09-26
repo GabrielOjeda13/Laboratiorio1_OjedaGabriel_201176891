@@ -29,10 +29,33 @@
 (define (get-b lista) (car(cdr(cdddr lista))))
 
 ;----- Modificadores (SET) -----.
-;Modificador del element r, numero del 0 al 255 del pixrgb.
-;Dom: Lista x lista
+;Modificador del element x, cordenada x del pixrgb.
+;Dom: Lista x Int
 ;Rec: Lista
-(define (set-r mi-pixrgb new-r)
+(define (set-xrgb mi-pixrgb new-x)
+  (pixrgb-d new-x
+            (get-y mi-pixrgb)
+            (get-r mi-pixrgb)
+            (get-g mi-pixrgb)
+            (get-b mi-pixrgb)
+            (get-d mi-pixrgb)))
+
+;Modificador del element y, cordenada y del pixrgb.
+;Dom: Lista x Int
+;Rec: Lista
+(define (set-yrgb mi-pixrgb new-y)
+  (pixrgb-d (get-x mi-pixrgb)
+            new-y
+            (get-r mi-pixrgb)
+            (get-g mi-pixrgb)
+            (get-b mi-pixrgb)
+            (get-d mi-pixrgb)))
+
+
+;Modificador del element r, numero del 0 al 255 del pixrgb.
+;Dom: Lista x int
+;Rec: Lista
+(define (set-rrgb mi-pixrgb new-r)
   (pixrgb-d (get-x mi-pixrgb)
             (get-y mi-pixrgb)
             new-r
@@ -41,9 +64,9 @@
             (get-d mi-pixrgb)))
 
 ;Modificador del element g, numero del 0 al 255 del pixrgb.
-;Dom: Lista x lista
+;Dom: Lista x int
 ;Rec: Lista
-(define (set-g mi-pixrgb new-g)
+(define (set-grgb mi-pixrgb new-g)
   (pixrgb-d (get-x mi-pixrgb)
             (get-y mi-pixrgb)
             (get-r mi-pixrgb)
@@ -52,15 +75,26 @@
             (get-d mi-pixrgb)))
 
 ;Modificador del element b, numero del 0 al 255 del pixrgb.
-;Dom: Lista x lista
+;Dom: Lista x int
 ;Rec: Lista
-(define (set-b mi-pixrgb new-b)
+(define (set-brgb mi-pixrgb new-b)
   (pixrgb-d (get-x mi-pixrgb)
             (get-y mi-pixrgb)
             (get-r mi-pixrgb)
             (get-g mi-pixrgb)
             new-b
             (get-d mi-pixrgb)))
+
+;Modificador del element d, profundiad del pixrgb.
+;Dom: Lista x int
+;Rec: Lista
+(define (set-drgb mi-pixrgb new-d)
+  (pixrgb-d (get-x mi-pixrgb)
+            (get-y mi-pixrgb)
+            (get-r mi-pixrgb)
+            (get-g mi-pixrgb)
+            (get-b mi-pixrgb)
+            new-d))
 
 ;Función de pertenencia que valida si un pixels es de tipo pixhex.
 ;Dom: Pixels

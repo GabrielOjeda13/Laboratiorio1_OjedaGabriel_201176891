@@ -22,20 +22,38 @@
 ;Modificador del element x, cordenada x del pixbit.
 ;Dom: Lista x lista
 ;Rec: Lista
-(define (set-x mi-pixbit new-x)
+(define (set-xbit mi-pixbit new-x)
   (pixbit-d new-x
          (get-y mi-pixbit)
          (get-bit mi-pixbit)
          (get-d mi-pixbit)))
 
 ;Modificador del element y, cordenada y del pixbit.
-;Dom: Lista x lista
+;Dom: Lista x int
 ;Rec: Lista
-(define (set-y mi-pixbit new-y)
+(define (set-ybit mi-pixbit new-y)
   (pixbit-d (get-x mi-pixbit)
             new-y
             (get-bit mi-pixbit)
             (get-d mi-pixbit)))
+
+;Modificador del element bit, bit del pixbit.
+;Dom: Lista x Lista
+;Rec: Lista
+(define (set-bitbit mi-pixbit new-bit)
+  (pixbit-d (get-x mi-pixbit)
+            (get-y mi-pixbit)
+            new-bit
+            (get-d mi-pixbit)))
+
+;Modificador del element d, profundiad del pixbit.
+;Dom: Lista x int
+;Rec: Lista
+(define (set-dbit mi-pixbit new-d)
+  (pixbit-d (get-x mi-pixbit)
+            (get-y mi-pixbit)
+            (get-bit mi-pixbit)
+            new-d))
 
 ;Función de pertenencia que valida si un pixels es de tipo pixbit.
 ;Dom: Pixels
