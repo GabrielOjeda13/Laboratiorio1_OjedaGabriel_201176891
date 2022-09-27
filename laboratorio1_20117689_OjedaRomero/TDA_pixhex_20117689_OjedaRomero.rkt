@@ -70,7 +70,7 @@
       [(not(number?(car pixels)))#f]
       [(not(number?(cadr pixels)))#f]
       [(not(number?(cadddr pixels)))#f]
-      [(not(string?(cadr pixels)))#f]
+      [(not(string?(caddr pixels)))#f]
       [(not(equal?(length pixels)4))#f]
       [(not(equal?(string-length(caddr pixels))6))#f]
       [else #t])))
