@@ -26,8 +26,8 @@
 ;Recorrido: Pixels
 (define (flip-x width pixels xinvert)
   (if (null? (cdr pixels))
-      (list (xinvert [car pixels] [- width (car pixels)] ))
-      (append (list (xinvert [car pixels] [- width (car pixels)] )) (flip-x width (cdr pixels) xinvert))))
+      (list (xinvert [car pixels] [- width (car (car pixels))] ))
+      (append (list (xinvert [car pixels] [- width (car (car pixels))] )) (flip-x width (cdr pixels) xinvert))))
 
 ;Tipo Recursión: Recursión Natural
 ;Función que invierte los valores de la coordenada y de un pixel, dado un valor.
@@ -35,5 +35,5 @@
 ;Recorrido: Pixels
 (define (flip-y height pixels yinvert)
   (if (null? (cdr pixels))
-      (list (yinvert [car pixels] [- height (car pixels)] ))
-      (append (list (yinvert [car pixels] [- height (cadr pixels)] )) (flip-y height (cdr pixels) yinvert))))
+      (list (yinvert [car pixels] [- height (cadr(car pixels))] ))
+      (append (list (yinvert [car pixels] [- height (cadr(car pixels))] )) (flip-y height (cdr pixels) yinvert))))

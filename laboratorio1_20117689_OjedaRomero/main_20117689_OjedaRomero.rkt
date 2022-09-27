@@ -17,9 +17,9 @@
 ;Recorrido: image
 (define (flipH imagen)
   (cond
-    [(pixmap? imagen) (list (get-width imagen) (get-height imagen) (flip-x (get-width imagen) (get-pixels imagen) set-xrgb))]
-    [(bitmap? imagen) (list (get-width imagen) (get-height imagen) (flip-x (get-width imagen) (get-pixels imagen) set-xbit))]
-    [(hexmap? imagen) (list (get-width imagen) (get-height imagen) (flip-x (get-width imagen) (get-pixels imagen) set-xhex))]
+    [(pixmap? imagen) (list (get-width imagen) (get-height imagen) (flip-x (- (get-width imagen ) 1) (get-pixels imagen) set-xrgb))]
+    [(bitmap? imagen) (list (get-width imagen) (get-height imagen) (flip-x (- (get-width imagen ) 1) (get-pixels imagen) set-xbit))]
+    [(hexmap? imagen) (list (get-width imagen) (get-height imagen) (flip-x (- (get-width imagen ) 1) (get-pixels imagen) set-xhex))]
     [else #f]))
 
 
